@@ -1,0 +1,1 @@
+{"ast":null,"code":"function MeetupDetail() {}","map":{"version":3,"sources":["/home/omershehzad/Downloads/next-course/pages/[meetupId]/index.js"],"names":["MeetupDetail"],"mappings":"AAAA,SAASA,YAAT,GACA,CAEC","sourcesContent":["function MeetupDetail()\n{\n    \n}"]},"metadata":{},"sourceType":"script"}
