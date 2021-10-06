@@ -1,5 +1,4 @@
 import MeetupList from "../components/meetups/MeetupList";
-import { useEffect, useState } from "react";
 
 const url = 'https://images.unsplash.com/photo-1590738066647-164aa47af7c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80';
 const DUMMY_MEETUPS = [
@@ -25,16 +24,20 @@ const DUMMY_MEETUPS = [
         description: 'this is forst '
     }
 ];
-function HomePage() {
-    const [loadedMeetups, setLoadedMeetsups] = useState([]);
-    useEffect(() => {
-        setLoadedMeetsups(DUMMY_MEETUPS);
+function HomePage(props) {
 
-    }, []); 
 
     return (
-        <MeetupList meetups={loadedMeetups} />
+        <MeetupList meetups={props.meetups} />
     );
 }
-
+export async function getStaticProps() { 
+    return {
+        props: {
+            meetups: DUMMY_MEETUPS
+        },
+        revalidate: 1 
+    };
+                   
+}
 export default HomePage;
